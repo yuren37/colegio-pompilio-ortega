@@ -5,38 +5,9 @@ import { JWT } from 'google-auth-library';
 
 // Rate limiting storage
 const rateLimit = new Map();
-
-const SERVICE_ACCOUNT_EMAIL = 'sheets-integration@instituto-pompilio-ortega.iam.gserviceaccount.com';
-const PRIVATE_KEY = `-----BEGIN PRIVATE KEY-----
-MIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCdd0x6Eb+lETaT
-SqZvaWbPz2j72tvr49VzS3TUXuqvwOitXSgXEX3y9KS+YeXiIJbjP+NKKuQU0QvR
-229nUHjWG3S+Aspu91F+q7a5VBAV4ne91SLJABHecObpY0fwUU8ftB1kRJMMTlWA
-DhMRgt+Y/nR2Yf5A9WQ9mKSjkTvGReJbMKQ+jdSwTd58sPJkFxCLwD/Jye/+FnX0
-AXpE370+Q39t/h9OXUv+vz1yiNw98336CMpZ/HsLF93Wg7V+J93TOoa4aWvuxFpZ
-GsVpdTTzLw2qf3jSJRk7A0mD/6ud8jFRAGeCUX/cKarMNNUc6ZBhDvPO/rfiVmYw
-aeatiRXVAgMBAAECggEABVy7aDnEALNEHEJxxf/9Hg0GWnNCw3br/SPf6956l/cW
-BVdThuuT0ir2FDyhtzBcawsxKoSo5TOUNzaFhetl3gar1E+khKBb8FgZHhkIfjJK
-2RZRu64KrbxDBMYafErMirwXtyMlrcjaHQT9rb467osVvLVMEvq4SeexjZdjxXXs
-kmTmgQIYMJe/WV+xUazAG75xFvBp7XXThCOmdubi6WpLDs66bbJKBc6u65mwm3cB
-YD6Yllb24TBUtBuIOef1Xm/7II9hx56ebYR2q4Q2Ei9ZWveKPERm8WJMVm607KdJ
-aV1NYTgI8cvuf6Jf8kW+IqZhPxSaDPg3IIpA1EAj+QKBgQDV+r5alNXv8Hl2UseY
-cBhbr8Xhl7PXiWpHjPiXtDjrPWxHnIgdrE83JlM7M8BRyINPBKFkNTb8+n3O0YmI
-45ejKsNKxWKyqAr4avvQRbV3K7rBmYOZ3JK+8Kh7FeRKfxufdfUTvowwBknShy1P
-XlTsM7K7DwYi5voI9UXhxOZeeQKBgQC8Y31IYgsIxmASHmDpnJRPkpZykeyzf5HF
-vDcSZHLg/talyHsczIAw4Wci4Dj1sXJENVQIWS/qnltiC+sx+TSEXrnB7HyiKZI7
-oXNyhJrhm9EmFyH8+kJKfDmhWh0sfEW+QlB/NUFvoQIUe9/aUynUc/YdVtRnuKf5
-doQS2GhrPQKBgENt3IZW2IPf16a9t0AGMubRoR3R3E5TczZQ6hWEKVuX44M9hHc1
-UVEjtp61VClxck94OhOF4Woe1X5S8XA9qA827oulX9DEu5BExk1/agu/r/5KDfpy
-U5vv4mfHIkWHgIDjfvNV3H9Vu/Wnu1ODemdkczIXLevZtXkVMYxPq/ihAoGAOFXQ
-Cys2fYNFC2YGORXXzAvb7Zrxm6PUZbspBNkA+YN7kMvo9O36j+N3whgnMGHF99uy
-q2RwTcrZLPK/fIw3RjZFelZL1vpzfl2DdoVtA3ZjDu7v/QShekC3wyZ9fuYSvRh7
-le7JCKavRozcnh8sbRnYSWHD1tiDcrgcOr54S0kCgYEAxlP5HP+2Ydwq17HY7K5X
-0P+eV21LtXil2zCLZ+o+4NTTutwgS9w1XYc+WcImpBgzguA8BptmvNcQCE9g+lje
-eB9WsaVvKQzAR3uLep0GdvhH1S/U5Q2jrVcJmzyPA+SLnO39rkHqkLZanRKzhvYi
-/Zbh3KevBBbqGW/cY7jbrL4=
------END PRIVATE KEY-----`;
-const SHEET_ID = '1rSJ37U64uFjBHh0kXO14Owqnw1Cr1mhDKshDOaFJQ7I';
-
+const SERVICE_ACCOUNT_EMAIL = process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL!;
+const PRIVATE_KEY = process.env.GOOGLE_PRIVATE_KEY!;
+const SHEET_ID = process.env.GOOGLE_SHEET_ID!;
 // Función para verificar duplicados
 async function verificarDuplicado(sheet: any, data: any): Promise<boolean> {
   try {

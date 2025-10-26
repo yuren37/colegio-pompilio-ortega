@@ -39,3 +39,6 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Credentials - Protege las claves de Google Sheets
+clave sheets google/
