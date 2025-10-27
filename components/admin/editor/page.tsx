@@ -3,7 +3,6 @@
 
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
-import CKEditorGold from '@/components/admin/CKEditorGold';
 
 export default function EditorPage() {
   const router = useRouter();
@@ -106,14 +105,7 @@ export default function EditorPage() {
           </div>
         </div>
 
-        {/* Editor en pantalla completa */}
-        <div className="bg-white rounded-lg border border-gray-200 p-1">
-          <CKEditorGold
-            content={content}
-            onChange={setContent}
-            fullScreen={false}
-          />
-        </div>
+  
 
         {/* Footer con estadísticas */}
         <div className="mt-6 bg-white p-4 rounded-lg border border-gray-200">

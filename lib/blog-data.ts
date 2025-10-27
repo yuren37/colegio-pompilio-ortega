@@ -1,5 +1,5 @@
 // lib/blog-data.ts
-import { BlogPost, User } from '@/types/blog';
+import { BlogPost } from '@/lib/blogStorage';
 
 // Datos de ejemplo
 let posts: BlogPost[] = [
@@ -9,12 +9,19 @@ let posts: BlogPost[] = [
     content: 'Contenido del primer post...',
     excerpt: 'Una cálida bienvenida a todos nuestros estudiantes y familias...',
     author: 'Administración',
-    createdAt: new Date().toISOString(),
-    updatedAt: new Date().toISOString(),
+    createdAt: new Date(),
+    updatedAt: new Date(),
     published: true,
+    imageUrl: '',
     tags: ['bienvenida', 'instituto']
   }
 ];
+
+// Definir el tipo User que falta
+interface User {
+  username: string;
+  password: string;
+}
 
 export const user: User = {
   username: 'admin',
@@ -24,7 +31,7 @@ export const user: User = {
 // Simular operaciones de base de datos
 export const blogData = {
   getPosts: async (): Promise<BlogPost[]> => {
-    return [...posts].sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime());
+    return [...posts].sort((a, b) => b.createdAt.getTime() - a.createdAt.getTime());
   },
 
   getPost: async (id: string): Promise<BlogPost | null> => {
@@ -35,8 +42,8 @@ export const blogData = {
     const newPost: BlogPost = {
       ...postData,
       id: Date.now().toString(),
-      createdAt: new Date().toISOString(),
-      updatedAt: new Date().toISOString()
+      createdAt: new Date(),
+      updatedAt: new Date()
     };
     posts.push(newPost);
     return newPost;
@@ -49,7 +56,7 @@ export const blogData = {
     posts[index] = {
       ...posts[index],
       ...postData,
-      updatedAt: new Date().toISOString()
+      updatedAt: new Date()
     };
     return posts[index];
   },

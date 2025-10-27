@@ -1,7 +1,7 @@
 // app/blog/dashboard/components/PostList.tsx
 'use client';
 
-import { BlogPost } from '@/types/blog';
+import { BlogPost } from '@/lib/blogStorage';
 import { motion } from 'framer-motion';
 import { Edit, Trash2, Eye, EyeOff, Calendar, User } from 'lucide-react';
 
@@ -50,7 +50,7 @@ export default function PostList({ posts, onEdit, onDelete, onTogglePublish }: P
                 </div>
                 <div className="flex items-center gap-1">
                   <Calendar className="w-4 h-4" />
-                  <span>{formatDate(post.createdAt)}</span>
+                  <span>{formatDate (post. createdAt.toString()) }</span>
                 </div>
                 <div className={`px-2 py-1 rounded-full text-xs font-bold ${
                   post.published 
