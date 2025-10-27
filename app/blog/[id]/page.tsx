@@ -104,7 +104,7 @@ export default function BlogPostPage() {
               </div>
               <div className="flex items-center gap-2">
                 <Calendar className="w-5 h-5" />
-                <span className="font-sans">{formatDate(post.createdAt)}</span>
+<span className="font-sans">{formatDate(post.createdAt.toString())}</span>
               </div>
             </div>
 
