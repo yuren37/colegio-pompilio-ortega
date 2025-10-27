@@ -2,7 +2,7 @@
 'use client';
 
 import { useState } from 'react';
-import { BlogPost } from '@/types/blog';
+import { BlogPost } from '@/lib/blogStorage';
 import { motion } from 'framer-motion';
 import { X, Plus, Tag } from 'lucide-react';
 
