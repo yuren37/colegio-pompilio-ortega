@@ -12,7 +12,6 @@ const rotatingWords = [
   "Liderazgo Juvenil"
 ];
 
-// Ecuaciones matemáticas y físicas para el fondo (más sutiles)
 const mathEquations = [
   "E = mc²",
   "a² + b² = c²",
@@ -61,12 +60,12 @@ export default function Hero() {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-[#F8F6F2] to-[#F4F1EA] pt-20">
       
-      {/* Video de fondo desde YouTube - URL CORREGIDA */}
+      {/* Video de fondo desde YouTube - NUEVO ENLACE SIN COPYRIGHT */}
       <div className="absolute inset-0 z-0">
         <iframe
           ref={iframeRef}
-          src="https://www.youtube.com/embed/IBMvrSIPqhA?autoplay=1&mute=1&loop=1&controls=0&playlist=IBMvrSIPqhA&modestbranding=1&rel=0&playsinline=1&enablejsapi=1"
-          className="absolute inset-0 w-full h-full scale-105" // scale-105 para cubrir mejor
+          src="https://www.youtube.com/embed/bJpRuJP3u9o?autoplay=1&mute=1&loop=1&controls=0&playlist=bJpRuJP3u9o&modestbranding=1&rel=0&playsinline=1&enablejsapi=1"
+          className="absolute inset-0 w-full h-full scale-105"
           frameBorder="0"
           allow="autoplay; encrypted-media; accelerometer; gyroscope; picture-in-picture"
           allowFullScreen
