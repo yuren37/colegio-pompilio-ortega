@@ -47,28 +47,29 @@ export default function Navbar() {
     }
   };
 
-  // BOTONES PRINCIPALES - PLAN LACRA
+  // BOTONES PRINCIPALES - CORREGIDOS
   const menuItems = [
-  { label: 'Inicio', href: '#inicio', icon: Home, action: 'scroll' },
-  { label: 'Carreras', href: '/carreras', icon: GraduationCap, action: 'internal' },
-  { label: 'Docentes', href: '/docentes', icon: Users, action: 'internal' },
-  { label: 'Matrícula', href: '#matricula', icon: FileText, action: 'scroll' },
-];
+    { label: 'Inicio', href: '#inicio', icon: Home, action: 'scroll' },
+    { label: 'Carreras', href: '#carreras', icon: GraduationCap, action: 'scroll' }, // Cambiado a scroll
+    { label: 'Docentes', href: '#docentes', icon: Users, action: 'scroll' }, // Cambiado a scroll
+    { label: 'Matrícula', href: '#matricula', icon: FileText, action: 'scroll' },
+  ];
 
-const fullscreenItems = [
-  { 
-    label: 'Blog Institucional', 
-    href: '/blog', 
-    icon: BookOpen, 
-    action: 'internal' 
-  },
-  { 
-    label: 'Biblioteca', 
-    href: '/biblioteca', 
-    icon: Library, 
-    action: 'internal' 
-  },
-];
+  const fullscreenItems = [
+    { 
+      label: 'Blog Institucional', 
+      href: '/blog', 
+      icon: BookOpen, 
+      action: 'internal' 
+    },
+    { 
+      label: 'Biblioteca', 
+      href: '/biblioteca', 
+      icon: Library, 
+      action: 'internal' 
+    },
+  ];
+
   const logoVariants = {
     hidden: { 
       opacity: 0,
