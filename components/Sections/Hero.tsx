@@ -30,8 +30,7 @@ export default function Hero() {
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
   const [isVisible, setIsVisible] = useState(true);
   const [isLoading, setIsLoading] = useState(true);
-  const [isVideoLoaded, setIsVideoLoaded] = useState(false);
-  const videoRef = useRef<HTMLVideoElement>(null);
+  const iframeRef = useRef<HTMLIFrameElement>(null);
 
   useEffect(() => {
     const loadTimer = setTimeout(() => {
@@ -59,39 +58,20 @@ export default function Hero() {
     }
   };
 
-  const handleVideoLoad = () => {
-    setIsVideoLoaded(true);
-  };
-
-  // Función para forzar reproducción del video
-  const forceVideoPlay = () => {
-    if (videoRef.current) {
-      videoRef.current.play().catch(error => {
-        console.log('Autoplay prevenido:', error);
-      });
-    }
-  };
-
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-[#F8F6F2] to-[#F4F1EA] pt-20">
       
-      {/* Video de fondo - CORREGIDO */}
+      {/* Video de fondo desde YouTube - CORREGIDO */}
       <div className="absolute inset-0 z-0">
-        <video
-          ref={videoRef}
-          autoPlay
-          muted
-          loop
-          playsInline
-          preload="auto"
-          onLoadedData={handleVideoLoad}
-          onCanPlayThrough={forceVideoPlay}
-          className="w-full h-full object-cover"
-        >
-          {/* LÍNEA CORREGIDA - SIN ESPACIOS EN EL NOMBRE */}
-          <source src="/video-hero.mp4" type="video/mp4" />
-          Tu navegador no soporta el elemento de video.
-        </video>
+        <iframe
+          ref={iframeRef}
+          src="https://www.youtube.com/embed/IBMvrSIPqhA?autoplay=1&mute=1&loop=1&controls=0&playlist=IBMvrSIPqhA&modestbranding=1&rel=0&playsinline=1"
+          className="absolute inset-0 w-full h-full"
+          frameBorder="0"
+          allow="autoplay; encrypted-media; accelerometer; gyroscope; picture-in-picture"
+          allowFullScreen
+          title="Video background Colegio Pompilio Ortega"
+        />
         
         {/* Overlay para mejorar legibilidad del texto */}
         <div className="absolute inset-0 bg-black/40"></div>
