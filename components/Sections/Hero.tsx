@@ -63,10 +63,19 @@ export default function Hero() {
     setIsVideoLoaded(true);
   };
 
+  // Función para forzar reproducción del video
+  const forceVideoPlay = () => {
+    if (videoRef.current) {
+      videoRef.current.play().catch(error => {
+        console.log('Autoplay prevenido:', error);
+      });
+    }
+  };
+
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-[#F8F6F2] to-[#F4F1EA] pt-20">
       
-      {/* Video de fondo */}
+      {/* Video de fondo - CORREGIDO */}
       <div className="absolute inset-0 z-0">
         <video
           ref={videoRef}
@@ -76,9 +85,11 @@ export default function Hero() {
           playsInline
           preload="auto"
           onLoadedData={handleVideoLoad}
+          onCanPlayThrough={forceVideoPlay}
           className="w-full h-full object-cover"
         >
-          <source src="/video fondo hero.mp4" type="video/mp4" />
+          {/* LÍNEA CORREGIDA - SIN ESPACIOS EN EL NOMBRE */}
+          <source src="/video-hero.mp4" type="video/mp4" />
           Tu navegador no soporta el elemento de video.
         </video>
         
