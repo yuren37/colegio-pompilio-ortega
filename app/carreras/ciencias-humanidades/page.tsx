@@ -85,7 +85,7 @@ export default function CienciasHumanidadesPage() {
             </motion.button>
 
             <motion.div className="fixed bottom-6 left-6 z-50 bg-black/80 text-white px-4 py-2 rounded-full text-sm backdrop-blur-sm">
-              🎓 Ciencias y Humanidades - Blogger
+               Ciencias y Humanidades
             </motion.div>
           </motion.div>
         )}

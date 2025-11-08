@@ -214,7 +214,7 @@ export default function DocentePage() {
                   : 'bg-blue-500'
               }`}
             >
-              {esDanilo ? '👑 ' : especial ? '⭐ ' : '👨‍🏫 '}
+              {esDanilo ? ' ' : especial ? ' ' : ' '}
               {nombre} - Blogger
             </motion.div>
           </motion.div>

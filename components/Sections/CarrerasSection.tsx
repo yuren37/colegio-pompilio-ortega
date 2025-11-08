@@ -6,13 +6,13 @@ import { useState } from 'react';
 import { Search, Clock, ArrowRight, CheckCircle2, GraduationCap, BookOpen } from 'lucide-react';
 import Link from 'next/link';
 
-// Datos hardcodeados de carreras (sin estudiantes)
+// Datos hardcodeados de carreras 
 const carrerasData = [
   {
     id: 1,
     nombre: "Bachillerato en Ciencias y Humanidades",
     descripcion: "Formación integral con enfoque en ciencias básicas y desarrollo humano.",
-    duracion: "3 años",
+    duracion: "2 años",
     area: "Ciencias",
     icono: "GraduationCap",
     color: "from-blue-500 to-purple-600",
@@ -35,7 +35,7 @@ const carrerasData = [
     bgColor: "from-green-50 to-teal-50",
     requisitos: [
       "Certificado de 6to grado",
-      "Edad mínima: 12 años",
+
       "Documentación completa"
     ],
     url: "/carreras/ciclo-comun"

@@ -6,7 +6,7 @@ import { useState } from 'react';
 import { Search, BookOpen, Star, Award, Languages, Cpu, Calculator, Palette, Users, Heart, Crown } from 'lucide-react';
 import Link from 'next/link';
 
-// Solo los datos básicos que necesitas
+// Datos de la seccion principal
 const docentesData = [
   {
     slug: "nury-castillo",
@@ -157,7 +157,7 @@ export default function DocentesSection() {
     <section id="docentes" className="py-20 bg-gradient-to-br from-[#F8F6F2] to-[#F4F1EA] relative overflow-hidden">
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header simple */}
+        {/* Header  */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -184,7 +184,7 @@ export default function DocentesSection() {
           </motion.p>
         </motion.div>
 
-        {/* Filtros simples */}
+        {/* Filtros  */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -222,7 +222,7 @@ export default function DocentesSection() {
           </div>
         </motion.div>
 
-        {/* Grid simple de docentes */}
+        {/* Grid de docentes */}
         <motion.div 
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"
           layout

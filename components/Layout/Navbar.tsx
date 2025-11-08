@@ -47,7 +47,7 @@ export default function Navbar() {
     }
   };
 
-  // BOTONES PRINCIPALES - CORREGIDOS
+  // BOTONES PRINCIPALES
   const menuItems = [
     { label: 'Inicio', href: '#inicio', icon: Home, action: 'scroll' },
     { label: 'Carreras', href: '#carreras', icon: GraduationCap, action: 'scroll' }, // Cambiado a scroll

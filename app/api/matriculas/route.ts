@@ -1,4 +1,4 @@
-// app/api/matriculas/route.ts - REEMPLAZAR COMPLETAMENTE
+// app/api/matriculas/route.ts
 import { NextRequest, NextResponse } from 'next/server';
 import { GoogleSpreadsheet } from 'google-spreadsheet';
 import { JWT } from 'google-auth-library';
@@ -64,9 +64,9 @@ function validarEdad(fechaNacimiento: string): { valida: boolean; error?: string
   return { valida: true };
 }
 
-// app/api/matriculas/route.ts - REEMPLAZAR la función POST completa
+// app/api/matriculas/route.ts 
 export async function POST(request: NextRequest) {
-  console.log('🎯 POST /api/matriculas - INICIANDO');
+  console.log(' POST /api/matriculas - INICIANDO');
   
   try {
     // Rate Limiting - Obtener IP de los headers
@@ -82,7 +82,7 @@ export async function POST(request: NextRequest) {
     const validRequests = requests.filter((time: number) => now - time < windowMs);
     
     if (validRequests.length >= maxRequests) {
-      console.log('🚫 Rate limit excedido para IP:', ip);
+      console.log(' Rate limit excedido para IP:', ip);
       return NextResponse.json(
         { success: false, error: 'Demasiadas solicitudes. Por favor intenta en 15 minutos.' },
         { status: 429 }
@@ -93,14 +93,14 @@ export async function POST(request: NextRequest) {
     rateLimit.set(ip, validRequests);
 
     const data = await request.json();
-    console.log('📝 Datos recibidos del formulario:', data);
+    console.log(' Datos recibidos del formulario:', data);
 
     // Validar datos requeridos
     const requiredFields = ['nombreEstudiante', 'fechaNacimiento', 'direccion', 'nombreEncargado', 'telefono', 'carrera', 'grado'];
     const missingFields = requiredFields.filter(field => !data[field]);
     
     if (missingFields.length > 0) {
-      console.error('❌ Campos faltantes:', missingFields);
+      console.error('Campos faltantes:', missingFields);
       return NextResponse.json(
         { success: false, error: `Campos requeridos faltantes: ${missingFields.join(', ')}` },
         { status: 400 }
@@ -109,8 +109,7 @@ export async function POST(request: NextRequest) {
 
     // Validaciones de formato
     const soloLetrasRegex = /^[A-Za-zÁáÉéÍíÓóÚúÑñ\s]+$/;
-    const soloNumerosRegex = /^\+?504\s?\d{4}-?\d{4}$/;
-    
+   
     // Validar nombre del estudiante (solo letras)
     if (!soloLetrasRegex.test(data.nombreEstudiante.replace(/\s+/g, ''))) {
       return NextResponse.json(
@@ -127,14 +126,7 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Validar teléfono (solo números en formato hondureño)
-    if (!soloNumerosRegex.test(data.telefono)) {
-      return NextResponse.json(
-        { success: false, error: 'Formato de teléfono inválido. Use: +504 0000-0000' },
-        { status: 400 }
-      );
-    }
-
+  
     // Validar email si está presente
     if (data.email && data.email !== '') {
       const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -155,7 +147,7 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    console.log('🔐 Configurando autenticación...');
+    console.log(' Configurando autenticación...');
     
     // Autenticación
     const auth = new JWT({
@@ -164,21 +156,21 @@ export async function POST(request: NextRequest) {
       scopes: ['https://www.googleapis.com/auth/spreadsheets'],
     });
 
-    console.log('📊 Conectando a Google Sheets...');
+    console.log(' Conectando a Google Sheets...');
     
     // Guardar en Google Sheets
     const doc = new GoogleSpreadsheet(SHEET_ID, auth);
     await doc.loadInfo();
     
-    console.log('✅ Documento cargado:', doc.title);
+    console.log(' Documento cargado:', doc.title);
     const sheet = doc.sheetsByIndex[0];
-    console.log('📑 Usando sheet:', sheet.title);
+    console.log(' Usando sheet:', sheet.title);
 
     // Verificar duplicados
-    console.log('🔍 Verificando duplicados...');
+    console.log(' Verificando duplicados...');
     const esDuplicado = await verificarDuplicado(sheet, data);
     if (esDuplicado) {
-      console.log('🚫 Solicitud duplicada detectada');
+      console.log(' Solicitud duplicada detectada');
       return NextResponse.json(
         { success: false, error: 'Ya existe una solicitud para este estudiante con el mismo número de teléfono' },
         { status: 409 }
@@ -199,16 +191,16 @@ export async function POST(request: NextRequest) {
       'Mensaje': data.mensaje || 'Sin mensaje adicional'
     };
 
-    console.log('💾 Agregando fila con datos:', rowData);
+    console.log(' Agregando fila con datos:', rowData);
     
     // AGREGAR FILA
     await sheet.addRow(rowData);
 
-    console.log('✅ Datos guardados exitosamente en Google Sheets');
+    console.log(' Datos guardados exitosamente en Google Sheets');
     return NextResponse.json({ success: true });
 
   } catch (error: any) {
-    console.error('💥 ERROR EN SERVIDOR:');
+    console.error(' ERROR EN SERVIDOR:');
     console.error('Mensaje:', error.message);
     
     if (error.message.includes('Duplicate header')) {

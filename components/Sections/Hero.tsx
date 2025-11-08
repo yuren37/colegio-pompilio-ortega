@@ -60,7 +60,7 @@ export default function Hero() {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-[#F8F6F2] to-[#F4F1EA] pt-20">
       
-      {/* Video de fondo desde YouTube - NUEVO ENLACE SIN COPYRIGHT */}
+      {/* Video de fondo desde YouTube  */}
       <div className="absolute inset-0 z-0">
         <iframe
           ref={iframeRef}
@@ -76,7 +76,7 @@ export default function Hero() {
         <div className="absolute inset-0 bg-black/40"></div>
       </div>
 
-      {/* Motion Blur Cristal - SOLO EFECTOS DE COLOR */}
+      {/* Motion Blur Cristal  */}
       <div className="absolute inset-0 z-1">
         <motion.div 
           className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-r from-[#9CA98C]/15 to-[#7D8A6E]/10 blur-3xl"
@@ -104,7 +104,7 @@ export default function Hero() {
         />
       </div>
 
-      {/* Fondo de ecuaciones MUY SUTILES - detrás de todo */}
+      {/* Fondo de ecuaciones  */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none z-1">
         {mathEquations.map((equation, index) => (
           <motion.div
@@ -135,7 +135,7 @@ export default function Hero() {
         ))}
       </div>
 
-      {/* Burbujas sutiles de fondo */}
+      {/* Burbujas de fondo */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none z-1">
         {[...Array(15)].map((_, i) => (
           <motion.div
@@ -198,7 +198,7 @@ export default function Hero() {
           )}
         </AnimatePresence>
 
-        {/* Badge de enfoque científico - ARRIBA */}
+        {/* Badge de enfoque científico */}
         <motion.div
           initial={{ y: -20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
@@ -216,7 +216,7 @@ export default function Hero() {
           </span>
         </motion.div>
 
-        {/* TÍTULO PRINCIPAL - JERARQUÍA CLARA */}
+        {/* TÍTULO PRINCIPAL */}
         <div className="mb-12">
           {/* Línea 1: Instituto No Gubernamental */}
           <motion.div
@@ -242,7 +242,7 @@ export default function Hero() {
             </h2>
           </motion.div>
 
-          {/* Línea 3: Ofrecemos + palabra animada - SEPARADO Y CLARO */}
+          {/* Línea 3: Ofrecemos + palabra animada */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -280,7 +280,7 @@ export default function Hero() {
           </motion.div>
         </div>
 
-        {/* Descripción - BIEN SEPARADA */}
+        {/* Descripción  */}
         <motion.p
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
@@ -291,7 +291,7 @@ export default function Hero() {
           mediante una educación basada en matemáticas, pero sobre todo valores y disciplina.
         </motion.p>
 
-        {/* Botones de acción - CLARAMENTE SEPARADOS */}
+        {/* Botones de acción  */}
         <motion.div
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}

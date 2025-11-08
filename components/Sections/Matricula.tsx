@@ -8,7 +8,7 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
 import { Send, Phone, Mail, MapPin, Calendar, User, BookOpen, ChevronRight, MessageCircle, UserCheck, Home, FileText } from 'lucide-react';
 
-// Esquema de validación con Zod - ACTUALIZADO
+// Esquema de validación con Zod 
 const formSchema = z.object({
   // Información del estudiante
   nombreEstudiante: z.string()
@@ -39,8 +39,7 @@ const formSchema = z.object({
     .regex(/^[A-Za-zÁáÉéÍíÓóÚúÑñ\s]+$/, "El nombre solo puede contener letras"),
   
   telefono: z.string()
-    .min(8, "Teléfono requerido")
-    .regex(/^\+?504\s?\d{4}-?\d{4}$/, "Formato inválido. Use: +504 0000-0000"),
+    .min(8, "Teléfono requerido"),
   
   email: z.string()
     .email("Email inválido")
@@ -60,7 +59,7 @@ const carreras = [
 ];
 
 export default function Matricula() {
-  // ✅ LOS HOOKS DEBEN ESTAR DENTRO DEL COMPONENTE
+  //   HOOKS 
   const [selectedCarrera, setSelectedCarrera] = useState('');
   const [gradosDisponibles, setGradosDisponibles] = useState<string[]>([]);
   const [showForm, setShowForm] = useState(false);
@@ -84,7 +83,7 @@ export default function Matricula() {
     setSubmitError('');
 
     try {
-      console.log('📝 Enviando datos al servidor...', data);
+      console.log('Enviando datos al servidor...', data);
       
       // Enviar a la API route
       const response = await fetch('/api/matriculas', {
@@ -100,13 +99,13 @@ export default function Matricula() {
       if (result.success) {
         // Mostrar pantalla de éxito
         setShowSuccess(true);
-        console.log('🎉 Formulario enviado exitosamente');
+        console.log(' Formulario enviado exitosamente');
       } else {
         setSubmitError(result.error || 'Error al guardar los datos. Por favor intenta nuevamente.');
-        console.error('❌ Error del servidor:', result.error);
+        console.error(' Error del servidor:', result.error);
       }
     } catch (error) {
-      console.error('💥 Error en el formulario:', error);
+      console.error(' Error en el formulario:', error);
       setSubmitError('Error de conexión. Por favor contacta al instituto directamente por WhatsApp.');
     } finally {
       setIsSubmitting(false);
@@ -380,7 +379,7 @@ export default function Matricula() {
         {...register('telefono')}
         className="w-full px-4 py-3 border-2 border-[#9CA98C]/30 focus:border-[#9CA98C] focus:outline-none transition-all duration-300 font-sans text-[#434343] placeholder:text-[#434343]/40 bg-white rounded-lg"
         placeholder="+504 0000-0000"
-        pattern="\+?504\s?\d{4}-?\d{4}"
+       
         title="Formato: +504 0000-0000"
         onInput={(e) => {
           // Permitir solo números, +, espacios y guiones

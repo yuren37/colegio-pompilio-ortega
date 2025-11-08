@@ -150,7 +150,7 @@ export default function BibliotecaPage() {
               transition={{ delay: 1.5 }}
               className="fixed bottom-6 left-6 z-50 bg-black/80 text-white px-4 py-2 rounded-full text-sm backdrop-blur-sm"
             >
-              📚 Biblioteca Virtual - Open Library
+               Biblioteca Virtual - Open Library
             </motion.div>
           </motion.div>
         )}
