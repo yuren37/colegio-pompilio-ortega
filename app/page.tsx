@@ -2,7 +2,11 @@
 import Navbar from '../components/Layout/Navbar';
 import Hero from '../components/Sections/Hero';
 import CarrerasSection from '../components/Sections/CarrerasSection';
+<<<<<<< HEAD
 
+=======
+import DocentesSection from '../components/Sections/DocentesSection';
+>>>>>>> 56695256c16a4cb2d8474560692cd4d90230695d
 import Matricula from '../components/Sections/Matricula';
 import Link from 'next/link';
 
@@ -15,7 +19,11 @@ export default function Home() {
       <main>
         <Hero />
         <CarrerasSection />
+<<<<<<< HEAD
      
+=======
+        <DocentesSection />
+>>>>>>> 56695256c16a4cb2d8474560692cd4d90230695d
         <Matricula />
       </main>
       
