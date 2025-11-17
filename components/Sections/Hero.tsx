@@ -29,7 +29,6 @@ export default function Hero() {
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
   const [isVisible, setIsVisible] = useState(true);
   const [isLoading, setIsLoading] = useState(true);
-<<<<<<< HEAD
   const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
@@ -40,11 +39,6 @@ export default function Hero() {
       });
     }
 
-=======
-  const iframeRef = useRef<HTMLIFrameElement>(null);
-
-  useEffect(() => {
->>>>>>> 56695256c16a4cb2d8474560692cd4d90230695d
     const loadTimer = setTimeout(() => {
       setIsLoading(false);
     }, 1200);
@@ -73,7 +67,6 @@ export default function Hero() {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-[#F8F6F2] to-[#F4F1EA] pt-20">
       
-<<<<<<< HEAD
       {/* Video de fondo local */}
       <div className="absolute inset-0 z-0">
         <video
@@ -87,19 +80,6 @@ export default function Hero() {
           <source src="/fondo-hero.mp4" type="video/mp4" />
           Tu navegador no soporta el elemento de video.
         </video>
-=======
-      {/* Video de fondo desde YouTube  */}
-      <div className="absolute inset-0 z-0">
-        <iframe
-          ref={iframeRef}
-          src="https://www.youtube.com/embed/bJpRuJP3u9o?autoplay=1&mute=1&loop=1&controls=0&playlist=bJpRuJP3u9o&modestbranding=1&rel=0&playsinline=1&enablejsapi=1"
-          className="absolute inset-0 w-full h-full scale-105"
-          frameBorder="0"
-          allow="autoplay; encrypted-media; accelerometer; gyroscope; picture-in-picture"
-          allowFullScreen
-          title="Video background Colegio Pompilio Ortega"
-        />
->>>>>>> 56695256c16a4cb2d8474560692cd4d90230695d
         
         {/* Overlay para mejorar legibilidad del texto */}
         <div className="absolute inset-0 bg-black/40"></div>

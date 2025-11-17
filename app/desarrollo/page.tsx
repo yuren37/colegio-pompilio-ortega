@@ -13,7 +13,6 @@ export default function DesarrolloPage() {
           </p>
         </div>
 
-<<<<<<< HEAD
         {/* Sección de la Empresa Desarrolladora */}
         <div className="bg-white rounded-2xl shadow-xl p-10 mb-12 border border-gray-200">
           <div className="flex flex-col md:flex-row gap-10 items-start">
@@ -32,38 +31,19 @@ export default function DesarrolloPage() {
                 <div>
                   <strong className="text-gray-800 block mb-1">Líder Técnico:</strong>
                   <p className="text-gray-700">Einar Yuren Marquez Gómez</p>
-=======
-        {/* Sección del Desarrollador */}
-        <div className="bg-white rounded-2xl shadow-xl p-10 mb-12 border border-gray-200">
-          <div className="flex flex-col md:flex-row gap-10 items-start">
-            <div className="flex-1">
-              <h2 className="text-3xl font-bold text-gray-900 mb-6">Desarrollador Full-Stack</h2>
-              
-              <div className="space-y-4 text-lg">
-                <div>
-                  <strong className="text-gray-800 block mb-1">Nombre:</strong>
-                  <p className="text-gray-700">Einar Yuren Marquez Gómez</p>
-                </div>
-                <div>
-                  <strong className="text-gray-800 block mb-1">Especialización:</strong>
-                  <p className="text-gray-700">Desarrollo Web Full-Stack</p>
                 </div>
                 <div>
                   <strong className="text-gray-800 block mb-1">Formación Académica:</strong>
                   <p className="text-gray-700">Bachillerato Técnico Profesional en Informática - Instituto Pompilio Ortega</p>
->>>>>>> 56695256c16a4cb2d8474560692cd4d90230695d
                 </div>
                 <div>
                   <strong className="text-gray-800 block mb-1">Contacto Profesional:</strong>
                   <p className="text-gray-700">einermarquez376@gmail.com</p>
                 </div>
-<<<<<<< HEAD
                 <div>
                   <strong className="text-gray-800 block mb-1">WhatsApp Empresarial:</strong>
                   <p className="text-gray-700">+504 9219-5392</p>
                 </div>
-=======
->>>>>>> 56695256c16a4cb2d8474560692cd4d90230695d
               </div>
             </div>
             
@@ -239,17 +219,12 @@ export default function DesarrolloPage() {
 
         {/* Llamada a la Acción */}
         <div className="text-center bg-gradient-to-r from-gray-800 to-gray-900 text-white rounded-2xl p-12 shadow-2xl">
-<<<<<<< HEAD
           <h2 className="text-3xl font-bold mb-4">¿Interesado en Nuestros Servicios?</h2>
-=======
-          <h2 className="text-3xl font-bold mb-4">Interesado en Mi Trabajo</h2>
->>>>>>> 56695256c16a4cb2d8474560692cd4d90230695d
           <p className="text-xl mb-8 opacity-90">
             Capacidad demostrada para desarrollar soluciones complejas y escalables que resuelven problemas reales
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a 
-<<<<<<< HEAD
               href="https://wa.me/50492195392?text=Hola%20Web%20Adventures%20HN,%20me%20interesa%20sus%20servicios%20de%20desarrollo"
               className="bg-green-500 hover:bg-green-600 text-white px-8 py-4 rounded-lg font-semibold transition-colors flex items-center justify-center gap-2"
             >
@@ -261,12 +236,6 @@ export default function DesarrolloPage() {
               className="bg-white text-gray-800 hover:bg-gray-100 px-8 py-4 rounded-lg font-semibold transition-colors"
             >
               Contactar por Email
-=======
-              href="mailto:einermarquez376@gmail.com?subject=Colaboración Profesional&body=Hola Einar, me interesa tu trabajo..."
-              className="bg-white text-gray-800 hover:bg-gray-100 px-8 py-4 rounded-lg font-semibold transition-colors"
-            >
-              Contactar para Proyectos
->>>>>>> 56695256c16a4cb2d8474560692cd4d90230695d
             </a>
             <a 
               href="/"
@@ -280,7 +249,6 @@ export default function DesarrolloPage() {
         {/* Footer de la página */}
         <div className="text-center mt-12 pt-8 border-t border-gray-300">
           <p className="text-gray-700">
-<<<<<<< HEAD
             &copy; 2025 <strong>Web Adventures HN</strong> - 
             Todos los derechos de desarrollo reservados
           </p>
@@ -289,13 +257,6 @@ export default function DesarrolloPage() {
           </p>
           <p className="text-xs text-gray-500 mt-1">
             Líder Técnico: Einar Yuren Marquez Gómez
-=======
-            &copy; 2025 <strong>Einar Yuren Marquez Gómez</strong> - 
-            Todos los derechos de desarrollo reservados
-          </p>
-          <p className="text-sm text-gray-600 mt-2">
-            Proyecto Académico - Bachillerato Técnico Profesional en Informática - Instituto Pompilio Ortega
->>>>>>> 56695256c16a4cb2d8474560692cd4d90230695d
           </p>
         </div>
 
